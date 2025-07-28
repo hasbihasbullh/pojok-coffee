@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>Semua Produk | PojokCoffee | Preline UI</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white">
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-[999] flex items-center justify-center bg-white transition-opacity duration-500 opacity-0">
+    <img class="w-32 h-auto animate-pulse" src="assets/img/logo.svg" alt="Loading...">
+  </div>
+  <!-- End Loader -->
+
+  <!-- ========== HEADER ========== -->
+  <header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-7">
+    <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+      <div class="lg:col-span-3 flex items-center">
+        <!-- Logo -->
+        <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+          <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+            <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+          </a>
+        </a>
+        <!-- End Logo -->
+      </div>
+
+      <!-- Button Group -->
+      <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+
+        <a href="bag.html" class="size-9.5 relative flex justify-center items-center rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+          <span class="sr-only">Cart</span>
+          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+          </svg>
+          <!-- Tambahkan ini untuk menampilkan jumlah item -->
+          <span id="cart-item-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full size-5 flex items-center justify-center" style="display: none;">0</span>
+        </a>
+        <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-[#6D3D18] text-white hover:bg-[#5A3214] focus:outline-hidden focus:bg-[#5A3214] transition disabled:opacity-50 disabled:pointer-events-none" href="sign-in.html">
+          Sign in
+        </a>
+
+        <div class="lg:hidden">
+          <button type="button" class="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none text-black border-gray-200 hover:bg-gray-100 focus:bg-gray-100" id="hs-pro-hcail-collapse" aria-expanded="false" aria-controls="hs-pro-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-pro-hcail">
+            <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <line x1="3" x2="21" y1="12" y2="12" />
+              <line x1="3" x2="21" y1="18" y2="18" />
+            </svg>
+            <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- End Button Group -->
+
+      <!-- Collapse -->
+      <div id="hs-pro-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-pro-hcail-collapse">
+        <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="index.html">Home</a></div>
+          <div><a class="relative inline-block text-black focus:outline-hidden before:absolute before:bottom-0.5 before:start-0 before:-z-1 before:w-full before:h-1 before:bg-[#6D3D18]" href="product.html">Product</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="blog.html">Blog</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="faq.html">FAQ</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="contact.html" aria-current="page">Kontak</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="about-us.html">Tentang Kami</a></div>
+        </div>
+      </div>
+      <!-- End Collapse -->
+    </nav>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content">
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-6 sm:mb-10">
+        <div class="max-w-2xl">
+          <h1 class="font-medium text-black text-3xl sm:text-4xl text-black">
+            Semua Produk Kami
+          </h1>
+        </div>
+
+        <div class="mt-4 md:mt-0 flex gap-4">
+          <div class="relative">
+            <input type="text" class="py-2 px-4 pe-10 block w-full border-gray-200 rounded-xl text-sm focus:border-[#6D3D18] focus:ring-[#6D3D18] bg-white border-gray-200 text-black" placeholder="Cari produk...">
+            <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+              <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21 21-4.34-4.34"/>
+                <circle cx="11" cy="11" r="8"/>
+              </svg>
+            </div>
+          </div>
+
+          <select class="py-2 px-4 pe-9 block border-gray-200 rounded-xl text-sm focus:border-[#6D3D18] focus:ring-[#6D3D18] bg-white border-gray-200 text-black">
+            <option>Filter berdasarkan</option>
+            <option>Harga: Rendah ke Tinggi</option>
+            <option>Harga: Tinggi ke Rendah</option>
+            <option>Populer</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Card Grid - Products will be loaded here by assets/js/script.js -->
+      <div id="all-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Product cards will be inserted here by assets/js/script.js -->
+      </div>
+      <!-- End Card Grid -->
+    </div>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="mt-auto border-t md:border-t-0 border-gray-200 border-gray-200">
+    <div class="w-full max-w-7xl py-10 md:pt-0 px-4 sm:px-6 lg:px-8 mx-auto">
+      <!-- Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+        <div class="text-center md:text-start">
+          <!-- Logo -->
+          <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+            <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+          </a>
+          <!-- End Logo -->
+        </div>
+        <!-- End Col -->
+
+        <div class="text-center text-sm text-black text-black">
+          Copyright © 2025 PojokCoffee. All rights reserved.
+        </div>
+        <!-- End Col -->
+
+        <!-- Social Brands -->
+        <div class="text-center md:text-end space-x-2">
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=37326&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+        </div>
+        <!-- End Social Brands -->
+
+      </div>
+      <!-- End Grid -->
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- JS Implementing Plugins -->
+
+  <!-- JS PLUGINS -->
+  <!-- Required plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script>
+
+  <!-- JS THIRD PARTY PLUGINS -->
+  <!-- Google Analytics. Global site tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B73TDMXKF5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-B73TDMXKF5');
+  </script>
+  <!-- Custom JS -->
+  <!-- Quick View Modal -->
+  <div id="quick-view-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto">
+    <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-4xl sm:w-full m-3 sm:mx-auto">
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl overflow-hidden bg-white border">
+        <div class="flex justify-between items-center py-3 px-4">
+          <h3 class="font-bold text-gray-800 text-gray-800">Tampilan Cepat</h3>
+          <button type="button" class="hs-overlay-default-btn flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none text-gray-800 hover:bg-gray-100" data-hs-overlay="#quick-view-modal">
+            <span class="sr-only">Tutup</span>
+            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-4 overflow-y-auto">
+          <!-- Modal content will be filled by JavaScript -->
+          <div id="quick-view-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

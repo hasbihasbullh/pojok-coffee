@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Akun Saya | PojokCoffee</title>
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-white">
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-[999] flex items-center justify-center bg-white transition-opacity duration-500 opacity-0">
+    <img class="w-32 h-auto animate-pulse" src="assets/img/logo.svg" alt="Loading...">
+  </div>
+  <!-- End Loader -->
+
+  <!-- ========== HEADER ========== -->
+  <header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-7">
+    <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+      <div class="lg:col-span-3 flex items-center">
+        <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+          <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+        </a>
+      </div>
+      <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+        <a href="bag.html" class="size-9.5 relative flex justify-center items-center rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+          <span class="sr-only">Cart</span>
+          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+          </svg>
+          <span id="cart-item-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full size-5 flex items-center justify-center" style="display: none;">0</span>
+        </a>
+        <!-- Anda mungkin ingin mengubah "Sign in" menjadi "Akun Saya" atau nama pengguna jika sudah login -->
+        <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-[#6D3D18] text-white hover:bg-[#5A3214] focus:outline-hidden focus:bg-[#5A3214] transition disabled:opacity-50 disabled:pointer-events-none" href="my-account.html">
+          Akun Saya
+        </a>
+        <div class="lg:hidden">
+          <button type="button" class="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" id="hs-pro-hcail-collapse" aria-expanded="false" aria-controls="hs-pro-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-pro-hcail">
+            <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <line x1="3" x2="21" y1="12" y2="12" />
+              <line x1="3" x2="21" y1="18" y2="18" />
+            </svg>
+            <svg class="hs-collapse-open:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Collapse -->
+      <div id="hs-pro-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-pro-hcail-collapse">
+        <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="index.html">Home</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="product.html">Product</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="blog.html">Blog</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="faq.html">FAQ</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="contact.html" aria-current="page">Kontak</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="about-us.html">Tentang Kami</a></div>
+        </div>
+      </div>
+      <!-- End Collapse -->
+    </nav>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content">
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
+      <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
+        <h1 class="font-medium text-black text-3xl sm:text-4xl">
+          Dashboard Akun Saya
+        </h1>
+        <p class="mt-2 text-gray-600">
+          Selamat datang kembali, [Nama Pengguna]!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
+        <!-- Sidebar Navigasi Akun -->
+        <div class="lg:col-span-1">
+          <nav class="flex flex-col p-4 bg-white border border-gray-200 rounded-xl shadow-sm space-y-2">
+            <a class="py-2 px-3 rounded-lg text-sm font-medium text-[#6D3D18] bg-gray-50 hover:bg-gray-100" href="my-account.html">Ringkasan Akun</a>
+            <a class="py-2 px-3 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-100" href="my-orders.html">Pesanan Saya</a>
+            <a class="py-2 px-3 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-100" href="profile-settings.html">Pengaturan Profil</a>
+            <a class="py-2 px-3 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-100" href="change-password.html">Ubah Kata Sandi</a>
+            <button type="button" class="py-2 px-3 rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 text-start" onclick="alert('Anda telah logout.'); window.location.href='sign-in.html';">Logout</button>
+          </nav>
+        </div>
+
+        <!-- Konten Utama Dashboard -->
+        <div class="lg:col-span-3">
+          <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 sm:p-7">
+            <h2 class="text-2xl font-semibold text-black mb-4">Ringkasan Akun</h2>
+            <p class="text-gray-700 mb-4">Di sini Anda dapat melihat ringkasan aktivitas akun Anda.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-lg text-black mb-2">Informasi Kontak</h3>
+                <p class="text-gray-700">Nama: [Nama Pengguna]</p>
+                <p class="text-gray-700">Email: [Email Pengguna]</p>
+                <a href="profile-settings.html" class="text-[#6D3D18] hover:underline text-sm mt-2 block">Edit Profil</a>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-lg text-black mb-2">Pesanan Terakhir</h3>
+                <p class="text-gray-700">Belum ada pesanan terbaru.</p>
+                <a href="my-orders.html" class="text-[#6D3D18] hover:underline text-sm mt-2 block">Lihat Semua Pesanan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="mt-auto border-t md:border-t-0 border-gray-200">
+    <div class="w-full max-w-7xl py-10 md:pt-0 px-4 sm:px-6 lg:px-8 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+        <div class="text-center md:text-start">
+          <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+            <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+          </a>
+        </div>
+        <div class="text-center text-sm text-black">Copyright © 2025 PojokCoffee. All rights reserved.</div>  
+        <div class="text-center md:text-end space-x-2">
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=37326&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

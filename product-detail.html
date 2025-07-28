@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags, title, favicon, fonts, Tailwind CSS -->
+    <meta charset="utf-8">
+    <title>Detail Produk | PojokCoffee</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+</head>
+<body class="bg-white">
+    <!-- Header (copy from index.html/product.html) -->
+    <header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-7">
+        <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+            <div class="lg:col-span-3 flex items-center">
+                <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+                    <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+                </a>
+            </div>
+            <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+                <a href="bag.html" class="size-9.5 relative flex justify-center items-center rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+                  <span class="sr-only">Cart</span>
+                  <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                  </svg>
+                  <!-- Tambahkan ini untuk menampilkan jumlah item -->
+                  <span id="cart-item-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full size-5 flex items-center justify-center" style="display: none;">0</span>
+                </a>
+                <a href="sign-in.html" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-[#6D3D18] text-white hover:bg-[#5A3214] focus:outline-hidden focus:bg-[#5A3214] transition disabled:opacity-50 disabled:pointer-events-none">
+                  Sign in
+                </a>
+        
+                <div class="lg:hidden">
+                  <button type="button" class="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none text-black border-gray-200 hover:bg-gray-100 focus:bg-gray-100" id="hs-pro-hcail-collapse" aria-expanded="false" aria-controls="hs-pro-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-pro-hcail">
+                    <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="3" x2="21" y1="6" y2="6" />
+                      <line x1="3" x2="21" y1="12" y2="12" />
+                      <line x1="3" x2="21" y1="18" y2="18" />
+                    </svg>
+                    <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 6 6 18" />
+                      <path d="m6 6 12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            <!-- Collapse -->
+      <div id="hs-pro-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-pro-hcail-collapse">
+        <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="index.html">Home</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="product.html">Product</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="blog.html">Blog</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="faq.html">FAQ</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="contact.html" aria-current="page">Kontak</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="about-us.html">Tentang Kami</a></div>
+        </div>
+      </div>
+      <!-- End Collapse -->
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="content">
+        <div class="max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
+            <div id="product-detail-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Product details will be loaded here by JavaScript -->
+                <div class="bg-gray-100 rounded-xl overflow-hidden">
+                    <img id="product-image" class="w-full h-96 object-cover" src="" alt="Product Image">
+                </div>
+                <div class="space-y-6">
+                    <h1 id="product-name" class="text-4xl font-bold text-black"></h1>
+                    <p id="product-price" class="text-3xl font-semibold text-[#6D3D18]"></p>
+                    <p id="product-description" class="text-gray-700 leading-relaxed"></p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>**Tasting Notes:** <span id="product-tasting-notes" class="font-medium text-black"></span></li>
+                        <li>**Origin:** <span id="product-origin" class="font-medium text-black"></span></li>
+                        <li>**Region:** <span id="product-region" class="font-medium text-black"></span></li>
+                    </ul>
+
+                    <!-- Quantity Selector -->
+                    <div class="flex items-center gap-x-3">
+                        <label for="quantity" class="text-lg font-medium text-black">Kuantitas:</label>
+                        <input type="number" id="quantity" value="1" min="1" class="py-2 px-3 block w-20 border-gray-300 rounded-lg text-sm focus:border-[#6D3D18] focus:ring-[#6D3D18]">
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button id="add-to-cart-btn" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-lg font-semibold rounded-lg border border-transparent bg-[#6D3D18] text-white hover:bg-[#5A3214] disabled:opacity-50 disabled:pointer-events-none">
+                        Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t md:border-t-0 border-gray-200">
+        <div class="w-full max-w-7xl py-10 md:pt-0 px-4 sm:px-6 lg:px-8 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+                <div class="text-center md:text-start">
+                    <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+                        <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+                    </a>
+                </div>
+                <div class="text-center text-sm text-black">Copyright © 2025 PojokCoffee. All rights reserved.</div>
+                <div class="text-center md:text-end space-x-2">
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#"><img src="https://img.icons8.com/?size=100&id=32309&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6"></a>
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#"><img src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6"></a>
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#"><img src="https://img.icons8.com/?size=100&id=37326&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Script khusus untuk product-detail.html
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const product = productsData.find(p => p.id === productId);
+
+            if (product) {
+                document.getElementById('product-image').src = product.image;
+                document.getElementById('product-image').alt = product.name;
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-price').textContent = `Rp ${product.price.toLocaleString("id-ID")}`;
+                document.getElementById('product-description').textContent = `Nikmati cita rasa ${product.name} yang kaya dan unik. Kopi ini berasal dari ${product.region}, ${product.origin}, dan menawarkan profil rasa yang memukau.`; // Contoh deskripsi lebih panjang
+                document.getElementById('product-tasting-notes').textContent = product.tastingNotes;
+                document.getElementById('product-origin').textContent = product.origin;
+                document.getElementById('product-region').textContent = product.region;
+
+                const addToCartBtn = document.getElementById('add-to-cart-btn');
+                addToCartBtn.addEventListener('click', function() {
+                    const quantityInput = document.getElementById('quantity');
+                    const quantity = parseInt(quantityInput.value);
+
+                    if (isNaN(quantity) || quantity < 1) {
+                        alert("Kuantitas harus minimal 1.");
+                        return;
+                    }
+
+                    addToCart(product, quantity); // Panggil fungsi global addToCart
+                    alert(`${quantity} ${product.name} telah ditambahkan ke keranjang!`);
+                    updateCartDisplay(); // Pastikan ikon keranjang di header terupdate
+                });
+
+            } else {
+                // Handle product not found
+                document.getElementById('product-detail-container').innerHTML = '<p class="text-center text-xl text-red-500">Produk tidak ditemukan.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

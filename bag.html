@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>Keranjang Belanja | PojokCoffee</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white">
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-[999] flex items-center justify-center bg-white transition-opacity duration-500 opacity-0">
+    <img class="w-32 h-auto animate-pulse" src="assets/img/logo.svg" alt="Loading...">
+  </div>
+  <!-- End Loader -->
+
+  <!-- ========== HEADER ========== -->
+  <header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-7">
+    <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+      <div class="lg:col-span-3 flex items-center">
+        <!-- Logo -->
+        <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+          <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+        </a>
+        <!-- End Logo -->
+      </div>
+
+      <!-- Button Group -->
+      <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+
+        <a href="bag.html" class="size-9.5 relative flex justify-center items-center rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
+          <span class="sr-only">Cart</span>
+          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+          </svg>
+          <!-- Tambahkan ini untuk menampilkan jumlah item -->
+          <span id="cart-item-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full size-5 flex items-center justify-center" style="display: none;">0</span>
+        </a>
+        <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-[#6D3D18] text-white hover:bg-[#5A3214] focus:outline-hidden focus:bg-[#5A3214] transition disabled:opacity-50 disabled:pointer-events-none" href="sign-in.html">
+          Sign in
+        </a>
+
+        <div class="lg:hidden">
+          <button type="button" class="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none text-black border-gray-200 hover:bg-gray-100 focus:bg-gray-100" id="hs-pro-hcail-collapse" aria-expanded="false" aria-controls="hs-pro-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-pro-hcail">
+            <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <line x1="3" x2="21" y1="12" y2="12" />
+              <line x1="3" x2="21" y1="18" y2="18" />
+            </svg>
+            <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- End Button Group -->
+
+      <!-- Collapse -->
+      <div id="hs-pro-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-pro-hcail-collapse">
+        <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="index.html">Home</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="product.html">Product</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="blog.html">Blog</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="faq.html">FAQ</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="contact.html" aria-current="page">Kontak</a></div>
+          <div><a class="inline-block text-black hover:text-gray-600 focus:outline-hidden" href="about-us.html">Tentang Kami</a></div>
+        </div>
+      </div>
+      <!-- End Collapse -->
+    </nav>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content">
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
+      <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
+        <h1 class="font-medium text-black text-3xl sm:text-4xl text-black">
+          Keranjang Belanja Anda
+        </h1>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Shopping Cart Items -->
+        <div class="lg:col-span-2">
+          <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 sm:p-7 bg-white border border-gray-200">
+            <!-- Table -->
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200 divide-gray-200">
+                <thead class="bg-gray-50 bg-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase text-gray-500">Produk</th>
+                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase text-gray-500">Harga</th>
+                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase text-gray-500">Kuantitas</th>
+                    <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase text-gray-500">Total</th>
+                    <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase text-gray-500"></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 divide-gray-200" id="cart-items-table-body">
+                  <!-- Item keranjang akan dirender di sini oleh JavaScript -->
+                </tbody>
+              </table>
+            </div>
+            <!-- End Table -->
+          </div>
+        </div>
+        <!-- End Shopping Cart Items -->
+
+        <!-- Order Summary -->
+        <div class="lg:col-span-1">
+          <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 sm:p-7 bg-white border border-gray-200">
+            <h2 class="text-lg font-semibold text-black text-black mb-4">Ringkasan Pesanan</h2>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 text-gray-600">Subtotal:</span>
+                <span class="font-medium text-black text-black" id="cart-subtotal">Rp 0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 text-gray-600">Pengiriman:</span>
+                <span class="font-medium text-black text-black" id="cart-shipping">Rp 0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 text-gray-600">Pajak:</span>
+                <span class="font-medium text-black text-black" id="cart-tax">Rp 0</span>
+              </div>
+              <div class="border-t border-gray-200 border-gray-200 pt-3 flex justify-between items-center">
+                <span class="text-lg font-semibold text-black text-black">Total Pesanan:</span>
+                <span class="text-lg font-semibold text-black text-black" id="cart-total">Rp 0</span>
+              </div>
+            </div>
+            <div class="mt-6">
+                <a href="checkout.html" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-[#6D3D18] text-white hover:bg-[#5A3214] disabled:opacity-50 disabled:pointer-events-none">
+                Lanjutkan ke Checkout
+                </a>
+              <a class="mt-3 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent text-[#6D3D18] hover:text-[#5A3214] focus:outline-hidden focus:text-[#5A3214] transition disabled:opacity-50 disabled:pointer-events-none" href="index.html">
+                Lanjutkan Belanja
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- End Order Summary -->
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="mt-auto border-t md:border-t-0 border-gray-200 border-gray-200">
+    <div class="w-full max-w-7xl py-10 md:pt-0 px-4 sm:px-6 lg:px-8 mx-auto">
+      <!-- Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+        <div class="text-center md:text-start">
+          <!-- Logo -->
+          <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80" href="index.html" aria-label="PojokCoffee">
+            <img class="w-28 h-auto" src="assets/img/logo.svg" alt="PojokCoffee Logo">
+          </a>
+          <!-- End Logo -->
+        </div>
+        <!-- End Col -->
+
+        <div class="text-center text-sm text-black text-black">
+          Copyright © 2025 PojokCoffee. All rights reserved.
+        </div>
+        <!-- End Col -->
+
+        <!-- Social Brands -->
+        <div class="text-center md:text-end space-x-2">
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+          <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-black hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <img src="https://img.icons8.com/?size=100&id=37326&format=png&color=6D3D18" alt="Social Media Icon" class="shrink-0 w-6 h-6">
+          </a>
+        </div>
+        <!-- End Social Brands -->
+
+      </div>
+      <!-- End Grid -->
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- JS Implementing Plugins -->
+
+  <!-- JS PLUGINS -->
+  <!-- Required plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script>
+
+  <!-- JS THIRD PARTY PLUGINS -->
+  <!-- Google Analytics. Global site tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B73TDMXKF5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-B73TDMXKF5');
+  </script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/script.js"></script> <!-- Pastikan script.js dimuat sebelum script ini -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const cartTableBody = document.getElementById('cart-items-table-body');
+        const cartSubtotalElement = document.getElementById('cart-subtotal');
+        const cartShippingElement = document.getElementById('cart-shipping');
+        const cartTaxElement = document.getElementById('cart-tax');
+        const cartTotalElement = document.getElementById('cart-total');
+        const checkoutButton = document.querySelector('a[href="checkout.html"]');
+
+        function renderCart() {
+            // Ambil data keranjang terbaru dari global `cart` di script.js
+            const currentCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
+            cartTableBody.innerHTML = ''; // Clear existing items
+            let subtotal = 0;
+
+            if (currentCart.length === 0) {
+                cartTableBody.innerHTML = '<tr><td colspan="5" class="px-6 py-4 text-center text-gray-500">Keranjang Anda kosong.</td></tr>';
+                checkoutButton.classList.add('disabled:opacity-50', 'disabled:pointer-events-none');
+                checkoutButton.setAttribute('aria-disabled', 'true');
+            } else {
+                checkoutButton.classList.remove('disabled:opacity-50', 'disabled:pointer-events-none');
+                checkoutButton.removeAttribute('aria-disabled');
+
+                currentCart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    const row = `
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img class="size-16 rounded-lg object-cover me-4" src="${item.image}" alt="${item.name}">
+                                    <div>
+                                        <h3 class="text-sm font-medium text-black">${item.name}</h3>
+                                        <p class="text-xs text-gray-500">${item.tastingNotes}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-black">Rp ${item.price.toLocaleString("id-ID")}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <input type="number" value="${item.quantity}" min="1" data-product-id="${item.id}"
+                                       class="quantity-input py-2 px-3 block w-20 border-gray-200 rounded-lg text-sm focus:border-[#6D3D18] focus:ring-[#6D3D18] bg-white text-gray-600">
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-semibold text-black">Rp ${itemTotal.toLocaleString("id-ID")}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                <button type="button" data-product-id="${item.id}" class="remove-item-btn text-red-500 hover:text-red-700">Hapus</button>
+                            </td>
+                        </tr>
+                    `;
+                    cartTableBody.insertAdjacentHTML('beforeend', row);
+                });
+            }
+
+            // Calculate totals (simplified for now, adjust as needed)
+            const shippingCost = 15000; // Example fixed shipping cost
+            const taxRate = 0.10; // 10% tax
+            const tax = subtotal * taxRate;
+            const total = subtotal + shippingCost + tax;
+
+            cartSubtotalElement.textContent = `Rp ${subtotal.toLocaleString("id-ID")}`;
+            cartShippingElement.textContent = `Rp ${shippingCost.toLocaleString("id-ID")}`;
+            cartTaxElement.textContent = `Rp ${tax.toLocaleString("id-ID")}`;
+            cartTotalElement.textContent = `Rp ${total.toLocaleString("id-ID")}`;
+
+            // Add event listeners for quantity change and remove buttons
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', (event) => {
+                    const productId = event.target.dataset.productId;
+                    const newQuantity = parseInt(event.target.value);
+                    if (newQuantity < 1) {
+                        event.target.value = 1; // Set to 1 if less than 1
+                        updateCartItemQuantity(productId, 1);
+                    } else {
+                        updateCartItemQuantity(productId, newQuantity);
+                    }
+                    renderCart(); // Re-render cart after update
+                });
+            });
+
+            document.querySelectorAll('.remove-item-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const productId = event.target.dataset.productId;
+                    removeFromCart(productId);
+                    renderCart(); // Re-render cart after removal
+                });
+            });
+        }
+
+        // Panggil renderCart saat halaman dimuat dan setiap kali keranjang berubah
+        renderCart();
+        // Tambahkan listener untuk event custom jika diperlukan, misal dari script.js
+        window.addEventListener('cartUpdated', renderCart);
+    });
+</script>
+</body>
+</html>
